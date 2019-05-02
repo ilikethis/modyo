@@ -1,0 +1,126 @@
+/***
+ *
+ * Typography Global Styles
+ *
+ * 1. headline
+ * 2. subhead
+ * 3. eyebrow
+ * 4. body
+ *
+***/
+
+/* 1. headline */
+.headline {
+  font-weight: 400;
+
+  &--medium {
+    font-weight: 500;
+  }
+
+  &--1 {
+    font-size: rem(32px);
+    letter-spacing: 0;
+    line-height: rem(40px);
+
+    @include from(tablet) {
+      font-size: rem(38px);
+      line-height: rem(44px);
+    }
+
+    @include from(desktop) {
+      font-size: rem(56px);
+      letter-spacing: -.5px;
+      line-height: rem(66px);
+    }
+  }
+
+  &--2 {
+    font-size: rem(24px);
+    letter-spacing: 0;
+    line-height: rem(32px);
+
+    @include from(tablet) {
+      font-size: rem(32px);
+      line-height: rem(40px);
+    }
+
+    @include from(desktop) {
+      font-size: rem(44px);
+      letter-spacing: -.5px;
+      line-height: rem(52px);
+    }
+  }
+
+  &--3 {
+    font-size: rem(20px);
+    letter-spacing: 0;
+    line-height: rem(28px);
+
+    @include from(tablet) {
+      font-size: rem(24px);
+      line-height: rem(32px);
+    }
+
+    @include from(desktop) {
+      font-size: rem(32px);
+      letter-spacing: 0;
+      line-height: rem(40px);
+    }
+  }
+
+  &--4 {
+    font-size: rem(16px);
+    letter-spacing: 0;
+    line-height: rem(26px);
+
+    @include from(desktop) {
+      font-size: rem(22px);
+      letter-spacing: 0;
+      line-height: rem(30px);
+    }
+  }
+}
+
+/* 2. subhead */
+.subhead {
+  font-size: rem(16px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: rem(26px);
+
+  @include from(desktop) {
+    font-size: rem(18px);
+    line-height: rem(30px);
+  }
+
+  &--medium {
+    font-weight: 500;
+  }
+}
+
+/* 3. eyebrow */
+.eyebrow {
+  color: $text;
+  font-size: rem(12px);
+  font-weight: 500;
+  letter-spacing: 1.25px;
+}
+
+/* 4. body */
+.body {
+  color: $text;
+  font-size: rem(14px);
+  font-weight: 400;
+  letter-spacing: .25px;
+  line-height: rem(24px);
+
+  @include from(desktop) {
+    font-size: rem(16px);
+    letter-spacing: 0;
+    line-height: rem(26px);
+  }
+
+  &--light {
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,68 @@
+/*
+ * Slider
+ *
+ * 1. self variables
+ * 2. slider
+ * 3. headline
+ * 4. glide
+ *
+ */
+
+/* 1. self variables */
+$bullets-background: rgba(222, 225, 230, 1);
+$quote-text: rgba(128, 128, 128, 1);
+
+/* 2. slider */
+.slider {
+  padding: 50px 0;
+  text-align: center;
+
+  @include from(tablet) {
+    padding: 50px;
+  }
+
+  /* 3. headline */
+  &__headline {
+    margin-bottom: 60px;
+  }
+
+  .container {
+    max-width: 1020px;
+  }
+
+  /* 4. glide */
+  .glide {
+    &__slide {
+      p {
+        color: $quote-text;
+        font-size: rem(20px);
+        font-style: italic;
+      }
+
+      span {
+        font-size: rem(13px);
+      }
+    }
+
+    &__image {
+      border-radius: 100px;
+      max-width: 90px;
+    }
+
+    &__bullets {
+      padding: 50px 50px 20px;
+    }
+
+    &__bullet {
+      background: $bullets-background;
+      border: 0;
+      border-radius: 50%;
+      margin: 4px;
+      padding: 5px;
+
+      &--active {
+        background: $green;
+      }
+    }
+  }
+}

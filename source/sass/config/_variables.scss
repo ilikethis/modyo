@@ -1,0 +1,41 @@
+$rem-baseline: 16px;
+
+// Breakpoints
+$bp-mobile: 300px;
+$bp-tablet: 600px;
+$bp-desktop: 1000px;
+$bp-large-desktop: 1440px;
+
+$bps: (
+  'mobile': $bp-mobile,
+  'tablet': $bp-tablet,
+  'desktop': $bp-desktop,
+  'large-desktop': $bp-large-desktop
+);
+
+$gutter: 25px;
+$push: true;
+$pull: true;
+
+/***
+* global colors
+*
+* recommended tool to set colors names
+* http://chir.ag/projects/name-that-color/
+*
+***/
+$black: #000;
+$green: rgb(0, 210, 181);
+$black-shadow: rgba(0, 0, 0, .1);
+$white: #fff;
+$text: rgb(133, 133, 133);
+$soft-gray: rgb(238, 238, 238);
+$soft-white: rgb(246, 246, 246);
+
+// Header
+$header-mobile-height: 56px;
+$header-tablet-height: 58px;
+$header-desktop-height: 64px;
+
+
+$font-comforta: 'Comfortaa', cursive;

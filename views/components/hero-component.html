@@ -1,0 +1,26 @@
+<section
+  class="hero"
+  data-reveal-module
+  id="{{section.id}}">
+  <div class="container">
+    <div class="hero__content">
+      {% if content.headline %}
+        <h1 class="hero__headline headline">{{content.headline}}</h1>
+      {% endif %}
+
+      {% if content.body %}
+      <p class="hero__body body">{{content.body}}</p>
+      {% endif %}
+
+      {% if content.link %}
+      <a class="hero__btn btn" target="_blank" href="{{content.link.url}}">
+        {{content.link.text}}
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="hero__image">
+      <img src="{{content.image.path}}" alt="hero">
+    </div>
+  </div>
+</section>

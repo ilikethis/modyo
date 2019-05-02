@@ -1,0 +1,59 @@
+<section
+  class="split{% if section.class %} split--{{section.class}}{% endif %}"
+  data-reveal-module
+  id="{{section.id}}">
+  {% if content.headline %}
+  <h2 class="split__headline headline">{{content.headline}}</h2>
+  {% endif %}
+
+  <div class="container">
+    <div class="split__content">
+      {% if content.sub_headline %}
+        <h2 class="split__sub-headline sub_headline">{{content.sub_headline}}</h2>
+      {% endif %}
+
+      {% if content.body %}
+      <p class="split__body body">{{content.body}}</p>
+      {% endif %}
+
+      {% if content.link %}
+      <a class="split__btn btn" target="_blank" href="{{content.link.url}}">
+        {{content.link.text}}
+      </a>
+      {% endif %}
+
+      {% if content.bullets %}
+        <ul class="split__list">
+        {% for item in content.bullets %}
+        <li class="split__list__item eyebrow">
+          <span class="icon-arrow-circle-right"></span>{{item}}
+        </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if content.card %}
+      <div class="card">
+        <div class="card__person">
+          <span class="card__picture">
+            <img src="{{content.card.person.picture}}">
+          </span>
+          <div class="card__info">
+            <strong>{{content.card.person.name}}</strong>
+            <p>{{content.card.person.position}}</p>
+          </div>
+        </div>
+        <div class="card__feedback body">
+          <i>"{{content.card.person.feedback}}"</i>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    {% if content.image %}
+    <div class="split__image">
+      <img src="{{content.image.path}}" alt="{% if content.image.alt %}content.image.alt{% endif %}">
+    </div>
+    {% endif %}
+  </div>
+</section>

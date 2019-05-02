@@ -1,0 +1,176 @@
+/***
+  * header
+  *
+  * 1. self vars
+  * 2. Adjust body content to header height
+  * 3. header styles
+  * 4. nav
+  * 5. item
+  * 6. hamburguer
+  * 7. drawer
+  * 8. logo
+  *
+***/
+
+/** 1. self vars */
+$menu-button-color: rgba(255, 255, 255, .6);
+$menu-soft-color: rgba(0, 0, 0, .1);
+
+/** 2. Adjust body content to header height */
+body {
+  @include from(desktop) {
+    overflow-x: hidden;
+    padding: $header-desktop-height 0 0;
+  }
+
+  padding: $header-mobile-height 0;
+}
+
+/** 3. header styles */
+.header {
+  align-items: center;
+  backface-visibility: hidden;
+  background-color: $white;
+  box-shadow: 0 0 2px 0 $menu-soft-color;
+  display: flex;
+  font-size: rem(13px);
+  height: $header-mobile-height;
+  justify-content: left;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  transition: transform ease .4s;
+  width: 100%;
+  z-index: 100;
+
+  @include from(tablet) {
+    height: $header-tablet-height;
+    justify-content: center;
+  }
+
+  /** 4. nav */
+  &__nav {
+    display: none;
+    height: 100%;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    @include from(desktop) {
+      display: block;
+      height: auto;
+      top: 0;
+      width: auto;
+    }
+
+    .showing-drawer & {
+      display: block;
+      top: 90px;
+
+      @include from(desktop) {
+        display: inline;
+        top: 0;
+      }
+    }
+  }
+
+  /** 5. item */
+  &__item {
+    color: $black;
+    padding: 10px;
+    transition: color .2s ease;
+
+    @include from(desktop) {
+      display: inline;
+    }
+
+    &:hover,
+    &.active {
+      color: $green;
+    }
+
+    .showing-drawer & {
+      display: block;
+
+      @include from(desktop) {
+        display: inline;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  /** 6. hamburguer */
+  &__hamburger {
+    display: block;
+    padding: 20px 25px 20px 0;
+    position: absolute;
+    right: 40px;
+    z-index: 2;
+
+    &::after,
+    &::before {
+      background: $green;
+      content: '';
+      height: 2px;
+      position: absolute;
+      transition: transform .2s ease;
+      width: 25px;
+
+      .showing-drawer & {
+        transform: rotate(40deg);
+      }
+    }
+
+    &::before {
+      top: 13px;
+
+      .showing-drawer & {
+        top: 20px;
+        transform: rotate(-40deg);
+      }
+    }
+
+    @include from(desktop) {
+      display: none;
+    }
+  }
+
+  /** 7. drawer */
+  &__drawer {
+    background: $white;
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .showing-drawer & {
+      display: block;
+
+      @include from(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  /** 8. logo */
+  &__logo {
+    left: 0;
+    max-width: 120px;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &.hide {
+    transform: translate(0, -100%);
+  }
+}

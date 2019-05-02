@@ -1,0 +1,14 @@
+{% set modyo_header = g.doc('/content/inc/header.yaml') %}
+
+<header class="header" data-header-module>
+  <input type="checkbox" class="header__input hamburguer" id="hamburguer" title="Open the navigation drawer">
+  <label for="hamburguer" class="header__hamburger hamburguer-action"></label>
+  <label for="hamburguer" class="header__drawer hamburguer-action"></label>
+
+  <a class="header__logo"><img src="static/images/landerz-logo.jpg" alt="landerz logo"></a>
+  <nav class="header__nav">
+  {% for item in modyo_header.nav %}
+    <a class="header__item" href="#{{item.anchor}}">{{item.text}}</a>
+  {% endfor %}
+  </nav>
+</header>

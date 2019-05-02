@@ -1,0 +1,31 @@
+/***
+  * contact
+  *
+  * 1. contact styles
+  * 2. conatiner override
+  * 3. headline
+  *
+***/
+
+/** 1. contact styles */
+.contact {
+  background: $soft-white;
+  padding: 25px;
+
+  @include from(desktop) {
+    padding: 50px;
+  }
+
+  /** 2. conatiner override */
+  .container {
+    background: $white;
+    margin: 50px auto;
+    max-width: 550px;
+    padding: 40px;
+  }
+
+  /** 3. headline */
+  &__headline {
+    text-align: center;
+  }
+}

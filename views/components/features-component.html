@@ -1,0 +1,34 @@
+<section
+  class="features"
+  data-reveal-module
+  id="{{section.id}}">
+  {% if content.headline %}
+  <h2 class="features__headline">{{content.headline}}</h2>
+  {% endif %}
+
+  <div class="container">
+    {% for feature in content.features %}
+    <div class="feature__item feature__item--{{loop.index}}">
+      {% if feature.headline %}
+      <span class="icon icon-{{feature.icon}}"></span>
+      <h3 class="feature_headline headline">
+      {{feature.headline}}
+      </h3>
+      {% endif %}
+
+      {% if feature.body %}
+      <p class="feature_body body">
+      {{feature.body}}
+      </p>
+      {% endif %}
+
+      {% if feature.link %}
+      <a class="feature_link link" href="{{feature.link.url}}">
+        {{feature.link.text}}
+      </a>
+      {% endif %}
+
+    </div>
+    {% endfor %}
+  </div>
+</section>

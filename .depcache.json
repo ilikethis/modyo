@@ -1,0 +1,16 @@
+{
+  "/content/pages/home.yaml": [
+    "/content/inc/footer.yaml",
+    "/content/inc/header.yaml",
+    "/dist/css/bundle.min.css",
+    "/dist/js/bundle.min.js",
+    "/views/components/carousel-component.html",
+    "/views/components/contact-component.html",
+    "/views/components/features-component.html",
+    "/views/components/hero-component.html",
+    "/views/components/split-component.html",
+    "/views/inc/_footer.html",
+    "/views/inc/_header.html",
+    "/views/inc/_schema.html"
+  ]
+}

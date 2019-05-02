@@ -1,0 +1,45 @@
+/***
+  * card
+  *
+  * 1. cards styles
+  * 2. person
+  * 3. picture
+  * 4. info
+  *
+***/
+
+/** 1. cards styles */
+.card {
+  background: $white;
+  border: 1px solid $soft-gray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px $black-shadow;
+  margin: 50px 0;
+  padding: 15px;
+
+  /** 2. person */
+  &__person {
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  /** 3. picture */
+  &__picture {
+    margin-right: 10px;
+    max-width: 80px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /** 4. info */
+  &__info {
+    font-size: rem(13px);
+
+    p {
+      margin: 5px 0;
+    }
+  }
+}

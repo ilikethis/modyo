@@ -1,0 +1,54 @@
+/***
+  * hero
+  *
+  * 1. styles
+  * 2. container override
+  * 3. content
+  * 4. image
+  *
+***/
+
+/** 1. styles */
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+  /** 2. container override */
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    @include from(desktop) {
+      flex-direction: row;
+    }
+  }
+
+  /** 3. content */
+  &__content {
+    flex-basis: 20%;
+    flex-grow: 1;
+    transform: translate(0);
+
+    @include from(desktop) {
+      flex-basis: 20%;
+      max-width: 200px;
+      transform: translate(30%);
+    }
+  }
+
+  /** 4. image */
+  &__image {
+    flex-grow: 2;
+
+    @include from(desktop) {
+      transform: translate(20%);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/*
+ * Reveal the modules
+ *
+ * 1. hidden elements
+ * 2. reveal
+ * 3. motion
+ *
+*/
+
+/* 1. hidden elements */
+[data-reveal-module] {
+  opacity: 0;
+}
+
+/* 2. reveal */
+.reveal {
+  animation: .8s ease 0s 1 normal forwards up-fadeIn;
+}
+
+/* 3. motion */
+@keyframes up-fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

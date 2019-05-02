@@ -1,0 +1,28 @@
+#
+# HEADER
+#
+
+## for business btn
+nav:
+  - item:
+    text: Home
+    anchor: hero
+  - item:
+    text: Features
+    anchor: features
+  - item:
+    text: About Us
+    anchor: about
+  - item:
+    text: Testimonials
+    anchor: testimonials
+  - item:
+    text: Blog
+    anchor: blog
+  - item:
+    text: Contact
+    anchor: get_in_touch
+
+brand:
+  image: /path
+  alt: alternative text

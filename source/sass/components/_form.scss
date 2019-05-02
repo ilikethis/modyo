@@ -1,0 +1,77 @@
+/***
+ * Form
+ *
+ * 1. main styles
+ * 2. areas
+ * 2.1 override
+***/
+
+
+/* 1. main styles */
+.form {
+  display: grid;
+  grid-column-gap: 35px;
+  grid-template-areas:
+  'firstname''lastname''email''subject''textarea''submit';
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 100%;
+
+  @include from(tablet) {
+    grid-template-areas:
+    'firstname lastname'
+    'email email'
+    'subject subject'
+    'textarea textarea'
+    'submit submit';
+    grid-template-columns: calc(100% / 2);
+  }
+
+  /* 2. areas */
+  &__first-name {
+    grid-area: firstname;
+  }
+
+  &__last-name {
+    grid-area: lastname;
+  }
+
+  &__email {
+    grid-area: email;
+  }
+
+  &__textarea {
+    grid-area: textarea;
+  }
+
+  &__subject {
+    grid-area: subject;
+  }
+
+  &__submit {
+    grid-area: submit;
+  }
+
+  &__field {
+    margin-bottom: 25px;
+  }
+
+  /* 2.1 override */
+  .input,
+  textarea {
+    border: solid 1px $soft-gray;
+    display: block;
+    padding: 12px 0;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+
+  .label {
+    display: block;
+    font-size: rem(12px);
+    margin-bottom: 10px;
+  }
+}

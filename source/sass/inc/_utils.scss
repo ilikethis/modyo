@@ -1,0 +1,69 @@
+/*
+ * Slider
+ *
+ * 1. self variables
+ * 2. buttons
+ * 3. link
+ * 4. icon
+ *
+ */
+
+/* 1. self variables */
+$btn-shadow: #00d2b55c;
+
+/* 2. buttons */
+.btn {
+  background: $green;
+  border-radius: 50px;
+  box-shadow: 3px 4px 5px $btn-shadow;
+  color: $white;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 15px 20px;
+  transition: box-shadow .2s ease;
+
+  &:hover {
+    box-shadow: 0 0 5px $btn-shadow;
+  }
+}
+
+/* 3. link */
+.link {
+  color: $green;
+  cursor: pointer;
+  font-size: rem(14px);
+  position: relative;
+
+  &::after {
+    background: $green;
+    content: '';
+    display: block;
+    height: 1px;
+    transition: width .2s ease;
+    width: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 30%;
+    }
+  }
+}
+
+/* 4. icon */
+.icon {
+  background: $green;
+  border-radius: 50px;
+  box-shadow: 3px 4px 5px $btn-shadow;
+  color: $white;
+  display: inline-block;
+  font-size: rem(20px);
+  min-width: 19px;
+  padding: 9px 10px;
+  text-align: center;
+  transition: box-shadow .2s ease;
+
+  &:hover {
+    box-shadow: 0 0 5px $btn-shadow;
+  }
+}

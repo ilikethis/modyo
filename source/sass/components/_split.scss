@@ -1,0 +1,64 @@
+/***
+  * split
+  *
+  * 1. styles
+  *
+***/
+
+.split {
+  background: $soft-white;
+  padding: 50px 0;
+
+  @include from(tablet) {
+    padding: 80px;
+  }
+
+  &--white {
+    background: $white;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    max-width: 1020px;
+
+    @include from(desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__list__item {
+    display: block;
+    margin-bottom: 10px;
+
+    span {
+      color: $green;
+      font-size: rem(18px);
+      padding-right: 5px;
+      transform: translate(4px);
+    }
+  }
+
+  &__headline {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  &__content {
+    flex-basis: 40%;
+  }
+
+  &__image {
+    align-self: center;
+    flex-basis: 60%;
+
+    img {
+      max-width: 100%;
+
+      @include from(tablet) {
+        max-width: 80%;
+      }
+    }
+  }
+}

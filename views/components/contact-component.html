@@ -1,0 +1,40 @@
+<section
+  class="contact"
+  data-reveal-module
+  id="{{section.id}}">
+  {% if content.headline %}
+  <h2 class="contact__headline headline">{{content.headline}}</h2>
+  {% endif %}
+  <div class="container">
+  <form class="form">
+    <div class="form__first-name form__field">
+      <label for="first-name" class="label">First Name</label>
+      <input autocomplete="off" type="text" name="first-name" class="input" required>
+    </div>
+
+    <div class="form__last-name form__field">
+      <label for="email" class="label">Last Name</label>
+      <input autocomplete="off" type="text" name="last-name" class="input" required>
+    </div>
+
+    <div class="form__email form__field">
+      <label for="email" class="label">Email</label>
+      <input autocomplete="off" type="email" name="email" class="input" required>
+    </div>
+
+    <div class="form__subject form__field">
+      <label for="subject" class="label">Subject</label>
+      <input autocomplete="off" type="text" name="subject" class="input" required>
+    </div>
+
+    <div class="form__textarea form__field">
+      <label for="message" class="label">Message</label>
+      <textarea name="message"></textarea>
+    </div>
+
+    <div class="form__submit form__field--submit">
+      <button class="btn" type="submit">Send Message</button>
+    </div>
+  </form>
+  </div>
+</section>

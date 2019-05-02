@@ -1,0 +1,27 @@
+grow_version: ">=0.4.0"
+
+root: /
+
+localization:
+  default_locale: en_US
+
+static_dirs:
+- static_dir: /source/images/
+  serve_at: /static/images/
+- static_dir: /source/fonts/
+  serve_at: /static/fonts/
+- static_dir: /dist/css/
+  serve_at: /static/css/
+- static_dir: /source/data/
+  serve_at: /static/data/
+- static_dir: /dist/js/
+  serve_at: /static/js/
+
+extensions:
+  preprocessors:
+    - extensions.npm.Preprocessor
+
+preprocessors:
+- kind: npm
+  build_task: "run build:prod"
+  run_task: "run build"

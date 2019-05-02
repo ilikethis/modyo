@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+{% set hreflang_rules = [('pt_BR', 'pt-br'), ('zh_Hant_HK', 'zh-hk'), ('zh_Hant_TW', 'zh-tw')] -%}
+{% for docgroup in docs|groupby('root_pod_path') %}
+{% for doc in docgroup[1] if not doc.noindex %}
+<url>
+  <loc>{{doc.url}}</loc>
+  {% set priority = doc.priority if doc.priority else 0.4 %}
+  <priority>{{priority}}</priority>
+  {% for locale in docgroup[1]|sort(attribute='url') %}
+    {% if locale.locale.language == 'en' -%}
+    {% set hreflang = locale.locale | replace('_','-') -%}
+    {% if hreflang|lower == 'en-us' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{locale.url}}"></xhtml:link>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{locale.url}}"></xhtml:link>
+    {% endif %}
+    <xhtml:link rel="alternate" hreflang="{{hreflang|lower}}" href="{{locale.url}}"/>
+    {% else %}
+      {% set hreflang = [locale.locale | replace('_','-')] %}
+      {% for key, value in hreflang_rules %}
+        {% if key == locale.locale %}
+          {% set _ = hreflang.append(value | replace('_','-')) %}
+        {% endif %}
+      {% endfor -%}
+
+      {% if hreflang[1] -%}
+        <xhtml:link rel="alternate" hreflang="{{hreflang[1]|lower}}" href="{{locale.url}}"/>
+      {% else -%}
+        <xhtml:link rel="alternate" hreflang="{{hreflang[0]|lower}}" href="{{locale.url}}"/>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</url>
+{% endfor %}
+{% endfor %}
+</urlset>

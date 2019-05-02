@@ -1,0 +1,63 @@
+{% set locale = doc.locale | replace('_', '-') %}
+
+<!DOCTYPE html>
+<html xml:lang="{{locale}}" lang="{{locale}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="title" content="title">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta property="og:title" content="title">
+    <meta property="og:image" content="social_image">
+    <meta property="og:url" content="page_url">
+    <meta property="og:description" content="description">
+    <meta property="og:locale" content="locale" />
+    <meta name="format-detection" content="telephone=no">
+
+    {% include "/views/inc/_schema.html" %}
+    <link rel="canonical" href="{{doc}}"/>
+
+    {% if doc.locales|length > 1 %}
+    {% for locale in doc.locales %}
+    <link rel="alternate" hreflang="{{locale | replace('_Hant', '') | replace('_', '-') }}" href="{{g.doc(doc.pod_path, locale=locale).url}}"/>
+    {% endfor %}
+    {% endif %}
+
+    <title>modyo test</title>
+
+    {# App CSS #}
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{g.static('/dist/css/bundle.min.css').url.path}}">
+    </head>
+  <body class="" data-current-locale="{{locale}}">
+    <main>
+      {% block header %}
+        {% include "/views/inc/_header.html" with context %}
+      {% endblock %}
+      {% block main_content %}
+        {% if doc.sections %}
+          {% for section in doc.sections %}
+            {% with
+              type=section.type,
+              content=section.content
+            %}
+              {# Get the corresponding partial #}
+              {% include '/views/components/' + type + '.html' with context%}
+            {% endwith %}
+          {% endfor %}
+        {% endif %}
+      {% endblock %}
+
+      {% block footer %}
+        {% include "/views/inc/_footer.html" %}
+      {% endblock %}
+    </main>
+
+    {% block body_base %}
+      <script src="//www.gstatic.com/external_hosted/hammerjs/v2_0_2/hammer.min.js"></script>
+      <script src="{{g.static('/dist/js/bundle.min.js').url.path}}"></script>
+    {% endblock %}
+  </body>
+</html>

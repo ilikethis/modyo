@@ -1,0 +1,147 @@
+$title: 'modyo test'
+$path: /{root}/
+$localization:
+  path: /intl/{locale}/{root}/
+
+meta:
+  keywords: >-
+    Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+  description: >-
+    Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+
+### HERO
+hero: &hero
+  id: hero
+  type: hero-component
+  content:
+    headline: Grow Your Business Faster
+    image:
+      path: 'static/images/hero/hero-image.png'
+      extension: 'png'
+    body: >-
+      Remaining essentially unchanged. It was popularised in the 1960s with the release.
+    link:
+      text: 'Get started'
+      url: 'url'
+      is_external: True
+
+### FEATURES
+features: &features
+  id: features
+  type: features-component
+  content:
+    headline: Features
+    features:
+      - feature:
+        icon: refresh
+        headline: Business consulting
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+      - feature:
+        icon: smile-o
+        headline: Market Analisys
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+      - feature:
+        icon: heart
+        headline: Market Analisys
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+      - feature:
+        icon: pencil
+        headline: Market Analisys
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+      - feature:
+        icon: compass
+        headline: Market Analisys
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+      - feature:
+        icon: key
+        headline: Market Analisys
+        body: >-
+          Remaining essentially unchanged. It was popularised in the 1960s with the release.
+        link:
+          text: Learn More
+          url: '/'
+          is_external: True
+
+## CREATE
+create: &create
+  id: 'create'
+  type: split-component
+  class: white
+  content:
+    sub_headline: Create iteractive prototypes
+    body: >-
+      WRemaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+    bullets:
+      - Lorem Ipsum passages.
+      - WRemaining essentially unchanged.
+    card:
+      person:
+        picture: static/images/split/person.jpg
+        name: Amalia G.
+        position: Co-Funder, XYZ
+        feedback: >-
+           WRemaining essentially unchanged. It was popularised in the 1960s.
+    image:
+      path: 'static/images/split/ui-kit.png'
+
+## ABOUT US
+about_us: &about_us
+  id: 'about'
+  type: split-component
+  content:
+    headline: About Us
+    sub_headline: Create iteractive prototypes
+    body: >-
+      WRemaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+    image:
+      path: 'static/images/split/about.jpg'
+    link:
+      text: Learn more
+      url: 'url'
+      is_external: True
+
+## TESTIMONIALS
+testimonials: &testimonials
+  id: 'testimonials'
+  type: carousel-component
+  content:
+    headline: Testimonials
+
+get_in_touch: &get_in_touch
+  id: 'get_in_touch'
+  type: contact-component
+  content:
+    headline: Get In Touch
+
+sections:
+  - *hero
+  - *features
+  - *create
+  - *about_us
+  - *testimonials
+  - *get_in_touch
